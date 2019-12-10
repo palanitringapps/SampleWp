@@ -4,6 +4,7 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -57,11 +58,12 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycleVersion"
 
-    implementation "com.facebook.fresco:fresco:$rootProject.fresco"
+    implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
 
     implementation "com.google.android.material:material:$rootProject.materialVersion"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$rootProject.kotlinVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutinesVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutinesVersion"
     implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$rootProject.jakewhartoncoroutinesadapterVersion"
+    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.glideVersion"
 }

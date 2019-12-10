@@ -14,8 +14,9 @@ import kotlinx.coroutines.withContext
 
 class FeedsViewmodel(app: Application) : BaseViewModel(app) {
 
-    private var response: MutableLiveData<SampleResponse> = MutableLiveData()
+    var response: MutableLiveData<SampleResponse> = MutableLiveData()
     private val feedRepo = FeedRepository(ApiFactory.makeRetrofitService())
+
 
     init {
         refreshFeed()
