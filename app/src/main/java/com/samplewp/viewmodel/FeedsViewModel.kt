@@ -12,7 +12,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class FeedsViewmodel(app: Application) : BaseViewModel(app) {
+class FeedsViewModel(app: Application) : BaseViewModel(app) {
 
     var response: MutableLiveData<SampleResponse> = MutableLiveData()
     private val feedRepo = FeedRepository(ApiFactory.makeRetrofitService())
@@ -23,7 +23,6 @@ class FeedsViewmodel(app: Application) : BaseViewModel(app) {
     }
 
     fun refreshFeed() {
-        //response.value = null
         uiScope.launch {
             response.value = getAllFeed()
         }
